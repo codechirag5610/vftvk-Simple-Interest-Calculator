@@ -1,16 +1,35 @@
+<!DOCTYPE html>
 <html>
     <head>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <title>Web App - Simple Interest Calculator</title>
     </head>
     <body>
-        <h1>Simple Interest Calculator</h1>
-
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
+        <div class="container">
+            <h1>Simple Interest Calculator</h1>
+            <div class="form">
+                <form name="myForm" method="POST">
+                    Amount* <input type="number"  id="principal" name="principal">  <br/>
+                    Rate* <input type="range" name="rate" class="slider" min="1" max="10" value="1" id="rate"><span id="rate_val"></span>
+                    <p>No. of Years* <select name="years" id="years">
+                        <option value="2">1</option>
+                        <option value="2">2</option>
+                        <option value="2">3</option>
+                        <option value="2">4</option>
+                        <option value="5">5</option>
+                        <option value="2">6</option>
+                        <option value="7">7</option>
+                        <option value="2">8</option>
+                        <option value="10">9</option>
+                        <option value="15">10</option>
+                    </select></p>
+                    <button onclick="return compute()">Compute</button>
+                </form>
+                </div>
+                <div class="result" id="result"></div>
+                <footer>&copy; Everybody can be rich!</footer>
+            </div>
+            <script src="compute.js"></script>
     </body>
 </html>
+
